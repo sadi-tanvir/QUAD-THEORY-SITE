@@ -6,7 +6,7 @@ const daysFont = Days_One({ subsets: ['latin'], weight: '400' })
 
 const Footer = () => {
     return (
-        <div className='w-screen bg-[#f99f1c] sm:pb-16'>
+        <footer className='w-screen bg-[#f99f1c] sm:pb-16'>
             <div className='container mx-auto flex justify-center sm:justify-between items-center h-auto py-10 sm:py-0'>
                 {/* search box */}
                 <div className='flex flex-col justify-center items-center sm:items-start px-4 sm:px-0'>
@@ -37,7 +37,7 @@ const Footer = () => {
                     <img className='h-80' src="/footer-image.png" alt="footer-image" />
                 </div>
             </div>
-        </div>
+        </footer>
     );
 };
 

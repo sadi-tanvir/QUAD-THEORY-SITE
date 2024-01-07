@@ -2,13 +2,18 @@ import React from 'react'
 import { DownArrowIcon, SearchCircleIcon, UserCircleIcon } from '@/components/shared/Icon';
 import { Days_One } from 'next/font/google'
 import NavItem from './shared/NavItem';
+import Link from 'next/link';
 
 const daysFont = Days_One({ subsets: ['latin'], weight: '400' })
 const Navbar = () => {
     return (
         <nav className='w-screen py-8 px-2 sm:px-0'>
             <div className="container mx-auto flex flex-row justify-between">
-                <div className={`mr-5 sm:mr-0 text-[#221314] ${daysFont.className} text-3xl`}>pti.</div>
+                <div className={`mr-5 sm:mr-0 text-[#221314] ${daysFont.className} text-3xl`}>
+                    <Link href="/">
+                        pti.
+                    </Link>
+                </div>
                 <div className='flex flex-row'>
                     {/* search box */}
                     <div className='flex justify-center items-center bg-white rounded-lg px-5 mr-5 w-full'>
@@ -36,7 +41,9 @@ const Navbar = () => {
 
                 </div>
                 <div className="account hidden sm:block">
-                    <UserCircleIcon className='w-10 h-10 text-red-500' />
+                    <Link href="/login">
+                        <UserCircleIcon className='w-10 h-10 text-red-500' />
+                    </Link>
                 </div>
             </div>
         </nav>

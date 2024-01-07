@@ -1,6 +1,7 @@
 import React from 'react'
 import { DownArrowIcon, SearchCircleIcon, UserCircleIcon } from '@/components/shared/Icon';
 import { Days_One } from 'next/font/google'
+import NavItem from './shared/NavItem';
 
 const daysFont = Days_One({ subsets: ['latin'], weight: '400' })
 const Navbar = () => {
@@ -24,12 +25,12 @@ const Navbar = () => {
                         MENU
                         <DownArrowIcon className='ml-8 text-primary' />
                         <ul className='group-hover/dropdown:block bg-white absolute top-8 sm:top-10 z-30 pt-2 border-t-4 rounded-lg hidden'>
-                            <li className='hover:bg-[#e7e9ec] hover:text-primary py-2 px-4 sm:px-8'>Home</li>
-                            <li className='hover:bg-[#e7e9ec] hover:text-primary py-2 px-4 sm:px-8'>Details</li>
-                            <li className='hover:bg-[#e7e9ec] hover:text-primary py-2 px-4 sm:px-8'>Category</li>
-                            <li className='hover:bg-[#e7e9ec] hover:text-primary py-2 px-4 sm:px-8'>My Favorites</li>
-                            <li className='hover:bg-[#e7e9ec] hover:text-primary py-2 px-4 sm:px-8'>Profile</li>
-                            <li className='hover:bg-[#e7e9ec] hover:text-primary rounded-b-lg py-2 px-4 sm:px-8'>Login/Sign Up</li>
+                            <NavItem path='/'>Home</NavItem>
+                            <NavItem path='/details'>Details</NavItem>
+                            <NavItem path='/category'>Category</NavItem>
+                            <NavItem path='/myFavorite'>My Favorites</NavItem>
+                            <NavItem path='/profile'>Profile</NavItem>
+                            <NavItem path='/login'>Login/Sign Up</NavItem>
                         </ul>
                     </div>
 

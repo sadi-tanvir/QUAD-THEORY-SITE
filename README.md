@@ -5,13 +5,13 @@
 
 ## Technologies Used
 
-- **Next.js**: A React framework for building server-rendered applications.
-- **Tailwind CSS**: A utility-first CSS framework for rapid UI development.
-- **TypeScript**: A superset of JavaScript that adds static typing to the language.
-- **Formik**: A form library for React to handle forms with ease.
-- **Redux Toolkit**: The official, opinionated, batteries-included toolset for efficient Redux development.
-- **Swiper**: A modern mobile touch slider with hardware-accelerated transitions.
-- **Yup**: A JavaScript schema builder for value parsing and validation.
+- **Next.js**
+- **Tailwind CSS**
+- **TypeScript**
+- **Formik**
+- **Redux Toolkit**
+- **Swiper**
+- **Yup**
 
 ## Error Faced
 

@@ -28,6 +28,7 @@ const BtnSlider = () => {
             <label htmlFor="addRecommendedProductModal" className='text-primary ml-auto mr-2 hidden sm:block cursor-pointer'>
                 AddMore
             </label>
+            
             <div>
                 <button className={``} onClick={handlePrevSlide}>
                     <LeftArrowIcon activeStatus={activeStatus} />

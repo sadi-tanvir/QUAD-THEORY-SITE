@@ -37,7 +37,7 @@ const Navbar = () => {
                             <NavItem path='/category'>Category</NavItem>
                             <NavItem path='/myFavorite'>My Favorites</NavItem>
                             <NavItem path='/profile'>Profile</NavItem>
-                            <NavItem path='/login'>Login/Sign Up</NavItem>
+                            <NavItem path='/login' navClassName='rounded-b-lg'>Login/Sign Up</NavItem>
                         </ul>
                     </div>
 

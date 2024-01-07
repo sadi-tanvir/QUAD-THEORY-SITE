@@ -38,6 +38,7 @@ export default function PopularProducts() {
     // redux
     const { products } = useAppSelector(state => state.productReducer);
 
+    // formik and yup validation
     const { values, errors, touched, handleChange, handleBlur, handleSubmit } = useFormik({
         initialValues: initialValues,
         validationSchema: productSchema,
@@ -63,6 +64,7 @@ export default function PopularProducts() {
 
     return (
         <section className="container mx-auto flex justify-center items-center px-2 sm:px-0 mb-10">
+            {/* product add modal */}
             <Modal
                 id="addPopularProductModal"
                 title="Add Popular Product"
@@ -74,6 +76,7 @@ export default function PopularProducts() {
                 errors={errors}
             />
 
+            {/* product display */}
             <Swiper
                 slidesPerView={3}
                 spaceBetween={10}

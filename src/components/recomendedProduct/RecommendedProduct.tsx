@@ -65,6 +65,7 @@ export default function RecommendedProducts() {
 
     return (
         <section className="container mx-auto flex justify-center items-center px-2 sm:px-0 mb-10">
+            {/* product add modal */}
             <Modal
                 id="addRecommendedProductModal"
                 title="Add Recommended Product"
@@ -76,6 +77,7 @@ export default function RecommendedProducts() {
                 errors={errors}
             />
 
+            {/* product display */}
             <Swiper
                 slidesPerView={3}
                 spaceBetween={10}

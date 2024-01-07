@@ -23,13 +23,12 @@ const BtnSlider = () => {
 
     return (
         <div className='-order-2 flex flex-row justify-between pb-3'>
-            {/* The button to open modal */}
-
             <p className='text-md sm:text-xl text-[#221314]'>Popular</p>
 
             <label htmlFor="addPopularProductModal" className='text-primary ml-auto mr-2 hidden sm:block cursor-pointer'>
                 AddMore
             </label>
+            
             <div>
                 <button className={``} onClick={handlePrevSlide}>
                     <LeftArrowIcon activeStatus={activeStatus} />

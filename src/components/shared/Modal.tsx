@@ -11,7 +11,7 @@ interface ModalTypes {
     handleBlur: any;
     touched: any;
     errors: any;
-}
+};
 
 
 const Modal = ({ id, title, handleSubmit, values, handleChange, handleBlur, touched, errors }: ModalTypes) => {
@@ -21,8 +21,8 @@ const Modal = ({ id, title, handleSubmit, values, handleChange, handleBlur, touc
             <input type="checkbox" id={id} className="modal-toggle" />
             <div className="modal" role="dialog">
                 <div className="modal-box">
-                <div className="modal-action flex justify-between items-center">
-                    <h3 className="font-bold text-lg">{title}</h3>
+                    <div className="modal-action flex justify-between items-center">
+                        <h3 className="font-bold text-lg">{title}</h3>
                         <label htmlFor={id} className="btn btn-error">X</label>
                     </div>
                     <form onSubmit={handleSubmit} className="card-body">
@@ -71,8 +71,8 @@ const Modal = ({ id, title, handleSubmit, values, handleChange, handleBlur, touc
                         />
 
                         <div className="form-control mt-6">
-                            <button  className="btn btn-primary">
-                                    Create Product
+                            <button className="btn btn-primary">
+                                Create Product
                             </button>
                         </div>
                     </form>

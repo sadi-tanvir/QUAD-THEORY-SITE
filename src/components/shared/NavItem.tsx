@@ -14,7 +14,7 @@ const NavItem: React.FC<NavItemTypes> = ({ path, children, navClassName }) => {
     const pathname = usePathname();
     return (
         <Link href={path}>
-            <li className={`${pathname == path ? 'bg-[#e7e9ec] text-primary' : "hover:bg-[#e7e9ec] hover:text-primary"} py-2 px-4 sm:px-8`}>
+            <li className={`${pathname == path ? 'bg-[#e7e9ec] text-primary' : "hover:bg-[#e7e9ec] hover:text-primary"} py-2 px-4 sm:px-8 ${navClassName}`}>
                 {children}
             </li>
         </Link>

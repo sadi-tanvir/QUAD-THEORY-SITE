@@ -8,8 +8,8 @@ const Footer = () => {
     return (
         <footer className='w-screen bg-[#f99f1c] sm:pb-16'>
             <div className='container mx-auto flex justify-center sm:justify-between items-center h-auto py-10 sm:py-0'>
-                {/* search box */}
                 <div className='flex flex-col justify-center items-center sm:items-start px-4 sm:px-0'>
+                    {/* subscribe box */}
                     <div className='flex justify-center items-center bg-white rounded-lg sm:rounded-2xl px-5 py-1 sm:mr-5 w-full'>
                         <input
                             placeholder='Enter Your Email'
@@ -21,6 +21,8 @@ const Footer = () => {
                             <LongRightArrowIcon className='ml-2' />
                         </button>
                     </div>
+
+                    {/* logo and social links */}
                     <div className='w-full flex flex-col-reverse sm:flex-row justify-between items-center sm:items-end mt-8 sm:mt-20'>
                         <div className=''>
                             <h1 className={`${daysFont.className} text-3xl text-center sm:text-start mb-8 sm:mb-0 text-[#221314]`}>pti <span className='text-primary -ml-1'>.</span></h1>
@@ -33,6 +35,8 @@ const Footer = () => {
                         </div>
                     </div>
                 </div>
+
+                {/* footer image */}
                 <div className='hidden sm:block'>
                     <img className='h-80' src="/footer-image.png" alt="footer-image" />
                 </div>

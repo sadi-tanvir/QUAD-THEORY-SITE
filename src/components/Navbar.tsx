@@ -9,11 +9,13 @@ const Navbar = () => {
     return (
         <nav className='w-screen py-8 px-2 sm:px-0'>
             <div className="container mx-auto flex flex-row justify-between">
+                {/* logo */}
                 <div className={`mr-5 sm:mr-0 text-[#221314] ${daysFont.className} text-3xl`}>
                     <Link href="/">
                         pti.
                     </Link>
                 </div>
+
                 <div className='flex flex-row'>
                     {/* search box */}
                     <div className='flex justify-center items-center bg-white rounded-lg px-5 mr-5 w-full'>
@@ -40,6 +42,8 @@ const Navbar = () => {
                     </div>
 
                 </div>
+
+                {/* account icon */}
                 <div className="account hidden sm:block">
                     <Link href="/login">
                         <UserCircleIcon className='w-10 h-10 text-red-500' />

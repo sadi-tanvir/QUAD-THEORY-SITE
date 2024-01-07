@@ -15,8 +15,6 @@ interface InputFieldType {
 
 const InputField = ({ label, name, type = "text", placeholder, className = "", error, value, onChange, onBlur, touched, ...props }: InputFieldType, ref: any) => {
 
-    console.log(touched, error, 'touched');
-
     return (
         <div className="form-control">
             <label className="label">

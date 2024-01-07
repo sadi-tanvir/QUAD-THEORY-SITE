@@ -12,6 +12,7 @@ import Modal from "../shared/Modal";
 import { productSchema } from "@/schemas";
 import { useFormik } from "formik";
 import BtnSlider from "./BtnSlider";
+import { useAppSelector } from "@/redux/hooks/hooks";
 
 interface ProductsType {
     Id: string;
@@ -31,33 +32,36 @@ const initialValues = {
 }
 
 export default function RecommendedProducts() {
-    const [photos, setPhotos] = useState<ProductsType[]>([])
+    // state
+    const [allProducts, setAllProducts] = useState<ProductsType[]>([])
 
+    // redux
+    const { products } = useAppSelector(state => state.productReducer);
+
+
+    // formik and yup validation
     const { values, errors, touched, handleChange, handleBlur, handleSubmit } = useFormik({
         initialValues: initialValues,
         validationSchema: productSchema,
         onSubmit: (values, action) => {
-            setPhotos([{
+            setAllProducts([{
                 Id: values.id,
                 Name: values.name,
                 Price: Number(values.price),
                 ImageUrl: values.image,
                 IsPopular: true,
                 IsRecommended: false
-            }, ...photos])
+            }, ...allProducts])
 
             action.resetForm();
         }
-    })
+    });
 
 
+    // load redux store products to allProduct state
     useEffect(() => {
-        (async () => {
-            const res = await fetch("http://www.api.technicaltest.quadtheoryltd.com/api/Item?page=1&pageSize=10")
-            const data = await res.json()
-            setPhotos(data.Items)
-        })()
-    }, [])
+        if (products?.length) setAllProducts(products)
+    }, [products]);
 
     return (
         <section className="container mx-auto flex justify-center items-center px-2 sm:px-0 mb-10">
@@ -102,15 +106,15 @@ export default function RecommendedProducts() {
             >
                 <BtnSlider />
                 {
-                    photos.map((photo: ProductsType) => (
+                    allProducts.map((product: ProductsType) => (
                         <SwiperSlide className="res-slide">
-                            <div key={photo.Id} className="w-full h-auto">
+                            <div key={product.Id} className="w-full h-auto">
                                 <img
                                     className="w-full h-32 sm:h-48 md:h-56 lg:h-64 rounded-lg"
-                                    key={photo.Id} src={photo.ImageUrl}
-                                    alt={photo.Name}
+                                    key={product.Id} src={product.ImageUrl}
+                                    alt={product.Name}
                                 />
-                                <p className="text-[#6e7a87] text-sm sm:text-lg">{photo.Name}</p>
+                                <p className="text-[#6e7a87] text-sm sm:text-lg">{product.Name}</p>
                             </div>
                         </SwiperSlide>
                     ))

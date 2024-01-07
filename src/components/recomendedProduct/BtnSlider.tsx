@@ -25,7 +25,9 @@ const BtnSlider = () => {
         <div className='-order-2 flex flex-row justify-between pb-3'>
             <p className='text-md sm:text-xl text-[#221314]'>Recommended</p>
 
-            <button className='text-primary ml-auto mr-2 hidden sm:block'>AddMore</button>
+            <label htmlFor="addRecommendedProductModal" className='text-primary ml-auto mr-2 hidden sm:block cursor-pointer'>
+                AddMore
+            </label>
             <div>
                 <button className={``} onClick={handlePrevSlide}>
                     <LeftArrowIcon activeStatus={activeStatus} />

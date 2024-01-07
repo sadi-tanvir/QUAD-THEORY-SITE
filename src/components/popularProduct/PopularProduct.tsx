@@ -9,6 +9,9 @@ import 'swiper/css/pagination';
 
 import { Navigation } from "swiper/modules";
 import BtnSlider from "@/components/popularProduct/BtnSlider";
+import Modal from "../shared/Modal";
+import { productSchema } from "@/schemas";
+import { useFormik } from "formik";
 
 interface ProductsType {
     Id: string;
@@ -19,8 +22,34 @@ interface ProductsType {
     IsRecommended: boolean;
 }
 
+
+const initialValues = {
+    id: "",
+    name: "",
+    price: "",
+    image: ""
+}
+
 export default function PopularProducts() {
     const [photos, setPhotos] = useState<ProductsType[]>([])
+
+    const { values, errors, touched, handleChange, handleBlur, handleSubmit } = useFormik({
+        initialValues: initialValues,
+        validationSchema: productSchema,
+        onSubmit: (values, action) => {
+            setPhotos([{
+                Id: values.id,
+                Name: values.name,
+                Price: Number(values.price),
+                ImageUrl: values.image,
+                IsPopular: true,
+                IsRecommended: false
+            }, ...photos])
+
+            action.resetForm();
+        }
+    })
+
 
     useEffect(() => {
         (async () => {
@@ -32,6 +61,17 @@ export default function PopularProducts() {
 
     return (
         <section className="container mx-auto flex justify-center items-center px-2 sm:px-0 mb-10">
+            <Modal
+                id="addPopularProductModal"
+                title="Add Popular Product"
+                values={values}
+                handleSubmit={handleSubmit}
+                handleChange={handleChange}
+                handleBlur={handleBlur}
+                touched={touched}
+                errors={errors}
+            />
+
             <Swiper
                 slidesPerView={3}
                 spaceBetween={10}

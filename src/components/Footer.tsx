@@ -23,8 +23,8 @@ const Footer = () => {
                     </div>
                     <div className='w-full flex flex-col-reverse sm:flex-row justify-between items-center sm:items-end mt-8 sm:mt-20'>
                         <div className=''>
-                            <h1 className={`${daysFont.className} text-3xl text-center sm:text-start mb-8 sm:mb-0`}>pti <span className='text-primary -ml-1'>.</span></h1>
-                            <span className='font-semibold'>Copyright ©Tripp.All Right Reserved</span>
+                            <h1 className={`${daysFont.className} text-3xl text-center sm:text-start mb-8 sm:mb-0 text-[#221314]`}>pti <span className='text-primary -ml-1'>.</span></h1>
+                            <span className='font-semibold text-[#221314]'>Copyright ©Tripp.All Right Reserved</span>
                         </div>
                         <div className='flex space-x-3 mb-8 sm:mb-0'>
                             <GoogleIcon className='text-[#fdd2a1] sm:text-primary bg-primary sm:bg-[#fdd2a1] rounded-full p-2 h-8 w-8' />
